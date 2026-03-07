@@ -3,7 +3,7 @@
 using namespace std;
 
 float loop_counter;
-float loop_bound, increment;
+float loop_bound;
 
 int main(int argc, char* argv[]) {
     // Inputs
