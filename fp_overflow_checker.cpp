@@ -2,11 +2,9 @@
 
 using namespace std;
 
+float loop_counter;
+float loop_bound, increment;
+
 int main() {
-    float loop_counter;
-
-    float loop_bound;
-    float increment;
-
     return 0;
 }
