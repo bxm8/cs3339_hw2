@@ -37,6 +37,6 @@ int main(int argc, char* argv[]) {
 void print_binary (float num) {
     uint32_t binary;
     memcpy(&num, &binary, sizeof(float));
-    cout << binary;
+    memcpy(&binary, &num, sizeof(float));
     cout << endl;
 }
