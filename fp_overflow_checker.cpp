@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -19,14 +20,17 @@ int main(int argc, char* argv[]) {
         cout << endl;
         return 1;
     }
+    // Set loop_bound and loop_counter to inputs
+    loop_bound = stof(argv[1]);
+    loop_counter = stof(argv[2]);
 
     // Number outputs
-
+    
     // Check for overflow
     
     return 0;
 }
 
 void print_binary (float num) {
-    
+
 }
