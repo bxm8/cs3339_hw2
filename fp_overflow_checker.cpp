@@ -25,6 +25,8 @@ int main(int argc, char* argv[]) {
     loop_counter = stof(argv[2]);
 
     // Number outputs
+    print_binary(loop_bound);
+    print_binary(loop_counter);
     
     // Check for overflow
     
