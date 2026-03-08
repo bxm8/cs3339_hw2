@@ -28,12 +28,15 @@ int main(int argc, char* argv[]) {
     // Number outputs
     print_binary(loop_bound);
     print_binary(loop_counter);
-    
+
     // Check for overflow
     
     return 0;
 }
 
 void print_binary (float num) {
-
+    uint32_t binary;
+    memcpy(&num, &binary, sizeof(float));
+    cout << binary;
+    cout << endl;
 }
