@@ -5,6 +5,8 @@ using namespace std;
 float loop_counter;
 float loop_bound;
 
+void print_binary (float num);
+
 int main(int argc, char* argv[]) {
     // Inputs
     // Check for number of arguments and exit if wrong
@@ -23,4 +25,8 @@ int main(int argc, char* argv[]) {
     // Check for overflow
     
     return 0;
+}
+
+void print_binary (float num) {
+    
 }
