@@ -18,7 +18,9 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // Outputs
+    // Number outputs
+
+    // Check for overflow
     
     return 0;
 }
