@@ -28,6 +28,7 @@ int main(int argc, char* argv[]) {
     loop_counter = stof(argv[2]);
 
     // Number outputs
+    cout << endl;
     cout << "Loop bound:\t";
     print_binary(loop_bound);
     cout << "Loop counter:\t";
