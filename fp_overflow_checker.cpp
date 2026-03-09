@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdint>
 #include <cstring>
+#include <bitset>
 
 using namespace std;
 
@@ -44,8 +45,8 @@ void print_binary (float num) {
     uint32_t exponent = (binary >> 23) & 0xFF;
     uint32_t fraction = (binary) & 0x7FFFFF;
 
-    cout << hex << sign << endl;
-    cout << hex << exponent << endl;
-    cout << hex << fraction << endl;
+    cout << bitset<1>(sign) << endl;
+    cout << bitset<8>(exponent) << endl;
+    cout << bitset<23>(fraction) << endl;
     cout << endl;
 }
