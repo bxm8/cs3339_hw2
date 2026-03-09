@@ -10,6 +10,7 @@ float loop_counter;
 float loop_bound;
 
 void print_binary (float num);
+void check_for_overflow(float bound, float counter);
 
 int main(int argc, char* argv[]) {
     // Inputs
@@ -36,6 +37,7 @@ int main(int argc, char* argv[]) {
     cout << endl;
 
     // Check for overflow
+    check_for_overflow(loop_bound, loop_counter);
     
     return 0;
 }
@@ -52,4 +54,8 @@ void print_binary (float num) {
     cout << bitset<1>(sign) << " ";
     cout << bitset<8>(exponent) << " ";
     cout << bitset<23>(fraction) << endl;
+}
+
+void check_for_overflow(float bound, float counter) {
+
 }
