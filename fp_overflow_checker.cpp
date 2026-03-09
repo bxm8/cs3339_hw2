@@ -37,7 +37,15 @@ int main(int argc, char* argv[]) {
 
 void print_binary (float num) {
     uint32_t binary;
-    memcpy(&num, &binary, sizeof(float));
+
     memcpy(&binary, &num, sizeof(float));
+
+    uint32_t sign = (binary >> 31) & 0x1;
+    uint32_t exponent = (binary >> 23) & 0xFF;
+    uint32_t fraction = (binary) & 0x7FFFFF;
+
+    cout << hex << sign << endl;
+    cout << hex << exponent << endl;
+    cout << hex << fraction << endl;
     cout << endl;
 }
