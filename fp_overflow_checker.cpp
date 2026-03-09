@@ -28,8 +28,11 @@ int main(int argc, char* argv[]) {
     loop_counter = stof(argv[2]);
 
     // Number outputs
+    cout << "Loop bound:\t";
     print_binary(loop_bound);
+    cout << "Loop counter:\t";
     print_binary(loop_counter);
+    cout << endl;
 
     // Check for overflow
     
@@ -45,8 +48,7 @@ void print_binary (float num) {
     uint32_t exponent = (binary >> 23) & 0xFF;
     uint32_t fraction = (binary) & 0x7FFFFF;
 
-    cout << bitset<1>(sign) << endl;
-    cout << bitset<8>(exponent) << endl;
+    cout << bitset<1>(sign) << " ";
+    cout << bitset<8>(exponent) << " ";
     cout << bitset<23>(fraction) << endl;
-    cout << endl;
 }
