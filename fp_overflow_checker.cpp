@@ -51,7 +51,10 @@ int main(int argc, char* argv[]) {
     cout << endl;
 
     // Check for overflow
-    check_for_overflow(loop_bound, loop_counter);
+    if (check_for_overflow())
+        cout << "Warning: Possible overflow!" << endl;
+    else
+        cout << "There is no overflow!" << endl;
     
     return 0;
 }
