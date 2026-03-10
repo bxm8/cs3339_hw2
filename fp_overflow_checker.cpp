@@ -27,6 +27,7 @@ uint32_t threshold_exponent;
 void convert_to_binary (float bound, float counter);
 void binary_output(uint32_t sign, uint32_t exponent, uint32_t fraction);
 bool check_for_overflow();
+void calculate_threshold();
 
 int main(int argc, char* argv[]) {
     // Inputs
@@ -92,4 +93,8 @@ bool check_for_overflow() {
         return false;
     
     return true;
+}
+
+void calculate_threshold() {
+    
 }
