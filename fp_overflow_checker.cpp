@@ -58,16 +58,17 @@ int main(int argc, char* argv[]) {
     cout << endl;
 
     // Check for overflow
-    if (check_for_overflow())
+    if (check_for_overflow()) {
         cout << "Warning: Possible overflow!" << endl;
+        
+        // Output threshold value
+        calculate_threshold();
+        cout << "Overflow threshold:" << endl;
+        cout << "\t"; binary_output(threshold_sign, threshold_exponent, threshold_fraction);
+        cout << "\t" << threshold << endl;
+    }
     else
         cout << "There is no overflow!" << endl;
-    
-    // Output threshold value
-    calculate_threshold();
-    cout << "Overflow threshold:" << endl;
-    cout << "\t"; binary_output(threshold_sign, threshold_exponent, threshold_fraction);
-    cout << "\t" << threshold << endl;
     
     
     return 0;
