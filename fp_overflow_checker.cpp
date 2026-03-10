@@ -21,7 +21,7 @@ uint32_t counter_fraction;
 
 void convert_to_binary (float bound, float counter);
 void binary_output(uint32_t sign, uint32_t exponent, uint32_t fraction);
-void check_for_overflow(float bound, float counter);
+bool check_for_overflow(float bound, float counter);
 
 int main(int argc, char* argv[]) {
     // Inputs
@@ -74,6 +74,6 @@ void binary_output(uint32_t sign, uint32_t exponent, uint32_t fraction) {
     cout << bitset<23>(fraction) << endl;
 }
 
-void check_for_overflow(float bound, float counter) {
+bool check_for_overflow(float bound, float counter) {
     // Check to see if the bound's exponent is significantly more than the counter's exponent
 }
