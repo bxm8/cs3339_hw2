@@ -67,6 +67,7 @@ int main(int argc, char* argv[]) {
     calculate_threshold();
     cout << "Overflow threshold:" << endl;
     cout << "\t"; binary_output(threshold_sign, threshold_exponent, threshold_fraction);
+    cout << "\t" << threshold << endl;
     
     
     return 0;
@@ -101,6 +102,9 @@ bool check_for_overflow() {
 void calculate_threshold() {
     threshold_exponent = counter_exponent + 24;
     threshold_binary = threshold_exponent << 23; // 23 zeros after and one zero before, since sign is assumed to be 0 and fraction is assumed to be 0
+    
     threshold_sign = 0;
     threshold_fraction = 0;
+
+    memcpy(&threshold, &threshold_binary, sizeof(float));
 }
