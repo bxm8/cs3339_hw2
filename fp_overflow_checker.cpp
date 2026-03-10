@@ -63,7 +63,9 @@ int main(int argc, char* argv[]) {
         cout << "There is no overflow!" << endl;
     
     // Output threshold value
+    calculate_threshold();
     cout << "Overflow threshold:" << endl;
+    cout << "\t" << bitset<32>(threshold_binary) << endl;
     
     
     return 0;
