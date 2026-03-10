@@ -40,13 +40,18 @@ int main(int argc, char* argv[]) {
 }
 
 void convert_to_binary (float bound, float counter) {
-    uint32_t binary;
+    uint32_t bound_binary;
+    uint32_t counter_binary;
 
-    memcpy(&binary, &num, sizeof(float));
+    memcpy(&bound_binary, &bound, sizeof(float));
+    uint32_t bound_sign = (bound_binary >> 31) & 0x1;
+    uint32_t bound_exponent = (bound_binary >> 23) & 0xFF;
+    uint32_t bound_fraction = (bound_binary) & 0x7FFFFF;
 
-    uint32_t sign = (binary >> 31) & 0x1;
-    uint32_t exponent = (binary >> 23) & 0xFF;
-    uint32_t fraction = (binary) & 0x7FFFFF;
+    memcpy(&counter_binary, &counter, sizeof(float));
+    uint32_t counter_sign = (counter_binary >> 31) & 0x1;
+    uint32_t counter_exponent = (counter_binary >> 23) & 0xFF;
+    uint32_t counter_fraction = (counter_binary) & 0x7FFFFF;
 
     cout << bitset<1>(sign) << " ";
     cout << bitset<8>(exponent) << " ";
