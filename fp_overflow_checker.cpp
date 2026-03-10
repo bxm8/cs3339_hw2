@@ -96,5 +96,6 @@ bool check_for_overflow() {
 }
 
 void calculate_threshold() {
-    
+    threshold_exponent = counter_exponent + 24;
+    threshold_binary = threshold_exponent << 23; // 23 zeros after and one zero before, since sign is assumed to be 0 and fraction is assumed to be 0
 }
