@@ -9,7 +9,7 @@ using namespace std;
 float loop_counter;
 float loop_bound;
 
-void print_binary (float num);
+void convert_to_binary (float num);
 void check_for_overflow(float bound, float counter);
 
 int main(int argc, char* argv[]) {
@@ -31,9 +31,9 @@ int main(int argc, char* argv[]) {
     // Number outputs
     cout << endl;
     cout << "Loop bound:\t";
-    print_binary(loop_bound);
+    convert_to_binary(loop_bound);
     cout << "Loop counter:\t";
-    print_binary(loop_counter);
+    convert_to_binary(loop_counter);
     cout << endl;
 
     // Check for overflow
@@ -42,7 +42,7 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 
-void print_binary (float num) {
+void convert_to_binary (float num) {
     uint32_t binary;
 
     memcpy(&binary, &num, sizeof(float));
@@ -57,5 +57,5 @@ void print_binary (float num) {
 }
 
 void check_for_overflow(float bound, float counter) {
-
+    // Check to see if the bound's exponent is significantly more than the counter's exponent
 }
