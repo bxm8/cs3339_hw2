@@ -76,4 +76,8 @@ void binary_output(uint32_t sign, uint32_t exponent, uint32_t fraction) {
 
 bool check_for_overflow(float bound, float counter) {
     // Check to see if the bound's exponent is significantly more than the counter's exponent
+    if (bound_exponent < counter_exponent + 24)
+        return false;
+    
+    return true;
 }
