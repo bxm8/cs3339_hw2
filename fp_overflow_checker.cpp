@@ -60,10 +60,6 @@ void convert_to_binary (float bound, float counter) {
     counter_sign = (counter_binary >> 31) & 0x1;
     counter_exponent = (counter_binary >> 23) & 0xFF;
     counter_fraction = (counter_binary) & 0x7FFFFF;
-
-    cout << bitset<1>(sign) << " ";
-    cout << bitset<8>(exponent) << " ";
-    cout << bitset<23>(fraction) << endl;
 }
 
 void binary_output(uint32_t sign, uint32_t exponent, uint32_t fraction) {
