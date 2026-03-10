@@ -9,6 +9,16 @@ using namespace std;
 float loop_counter;
 float loop_bound;
 
+uint32_t bound_binary;
+uint32_t bound_sign;
+uint32_t bound_exponent;
+uint32_t bound_fraction;
+
+uint32_t counter_binary;
+uint32_t counter_sign;
+uint32_t counter_exponent;
+uint32_t counter_fraction;
+
 void convert_to_binary (float bound, float counter);
 void check_for_overflow(float bound, float counter);
 
@@ -40,18 +50,15 @@ int main(int argc, char* argv[]) {
 }
 
 void convert_to_binary (float bound, float counter) {
-    uint32_t bound_binary;
-    uint32_t counter_binary;
-
     memcpy(&bound_binary, &bound, sizeof(float));
-    uint32_t bound_sign = (bound_binary >> 31) & 0x1;
-    uint32_t bound_exponent = (bound_binary >> 23) & 0xFF;
-    uint32_t bound_fraction = (bound_binary) & 0x7FFFFF;
+    bound_sign = (bound_binary >> 31) & 0x1;
+    bound_exponent = (bound_binary >> 23) & 0xFF;
+    bound_fraction = (bound_binary) & 0x7FFFFF;
 
     memcpy(&counter_binary, &counter, sizeof(float));
-    uint32_t counter_sign = (counter_binary >> 31) & 0x1;
-    uint32_t counter_exponent = (counter_binary >> 23) & 0xFF;
-    uint32_t counter_fraction = (counter_binary) & 0x7FFFFF;
+    counter_sign = (counter_binary >> 31) & 0x1;
+    counter_exponent = (counter_binary >> 23) & 0xFF;
+    counter_fraction = (counter_binary) & 0x7FFFFF;
 
     cout << bitset<1>(sign) << " ";
     cout << bitset<8>(exponent) << " ";
