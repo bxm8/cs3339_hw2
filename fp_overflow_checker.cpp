@@ -43,6 +43,12 @@ int main(int argc, char* argv[]) {
     convert_to_binary(loop_bound, loop_counter);
 
     // Number outputs
+    cout << endl;
+    cout << "Loop bound:\t";
+    binary_output(bound_sign, bound_exponent, bound_fraction);
+    cout << "Loop counter:\t";
+    binary_output(counter_sign, counter_exponent, counter_fraction);
+    cout << endl;
 
     // Check for overflow
     check_for_overflow(loop_bound, loop_counter);
