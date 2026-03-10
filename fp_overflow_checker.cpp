@@ -9,7 +9,7 @@ using namespace std;
 float loop_counter;
 float loop_bound;
 
-void convert_to_binary (float num);
+void convert_to_binary (float bound, float counter);
 void check_for_overflow(float bound, float counter);
 
 int main(int argc, char* argv[]) {
@@ -28,13 +28,10 @@ int main(int argc, char* argv[]) {
     loop_bound = stof(argv[1]);
     loop_counter = stof(argv[2]);
 
+    // Number conversions
+    convert_to_binary(loop_bound, loop_counter);
+
     // Number outputs
-    cout << endl;
-    cout << "Loop bound:\t";
-    convert_to_binary(loop_bound);
-    cout << "Loop counter:\t";
-    convert_to_binary(loop_counter);
-    cout << endl;
 
     // Check for overflow
     check_for_overflow(loop_bound, loop_counter);
@@ -42,7 +39,7 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 
-void convert_to_binary (float num) {
+void convert_to_binary (float bound, float counter) {
     uint32_t binary;
 
     memcpy(&binary, &num, sizeof(float));
