@@ -23,6 +23,7 @@ float threshold;
 uint32_t threshold_binary;
 uint32_t threshold_sign;
 uint32_t threshold_exponent;
+uint32_t threshold_fraction;
 
 void convert_to_binary (float bound, float counter);
 void binary_output(uint32_t sign, uint32_t exponent, uint32_t fraction);
@@ -65,7 +66,7 @@ int main(int argc, char* argv[]) {
     // Output threshold value
     calculate_threshold();
     cout << "Overflow threshold:" << endl;
-    cout << "\t" << bitset<32>(threshold_binary) << endl;
+    cout << "\t"; binary_output(threshold_sign, threshold_exponent, threshold_fraction);
     
     
     return 0;
@@ -100,4 +101,6 @@ bool check_for_overflow() {
 void calculate_threshold() {
     threshold_exponent = counter_exponent + 24;
     threshold_binary = threshold_exponent << 23; // 23 zeros after and one zero before, since sign is assumed to be 0 and fraction is assumed to be 0
+    threshold_sign = 0;
+    threshold_fraction = 0;
 }
